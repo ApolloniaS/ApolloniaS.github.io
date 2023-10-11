@@ -14,7 +14,7 @@ import Test from './components/test.vue'
   <Test></Test>
   <ExperienceComp></ExperienceComp>
 
-  <div class="nav">
+  <div class="nav f-28">
     <p><a href="#top">00</a></p>
     <p><a href="#about">01</a></p>
     <p><a href="#exp">02</a></p>
@@ -40,7 +40,7 @@ import Test from './components/test.vue'
   position: fixed;
   right: 1rem;
   top: 50%;
-  transform: translate(-50%);
+  transform: translate(0, -50%);
   font-family: "DoublePixel", sans-serif;
   color: #1f081c;
   border-right: 1px solid #1f081c;

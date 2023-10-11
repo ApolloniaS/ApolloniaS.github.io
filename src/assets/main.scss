@@ -32,6 +32,10 @@ a {
 }
 ///
 
+.f-28 {
+  font-size: 28px;
+}
+
 .component-container {
   margin: 0 !important;
   position: relative;
@@ -45,4 +49,54 @@ a {
   font-size: 4rem;
   padding: 3rem;
   color: #4a2b55;
+}
+
+.CTA {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  border: 1px solid #aa7da1;
+  font-size: 32px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+  color: #aa7da1 !important;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.CTA::before,
+.CTA::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background-color: #1f081c;
+  transition: transform 1.5s ease;
+  z-index: -1;
+}
+
+.CTA::after {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.CTA::before {
+  right: 0;
+  transform: translateX(100%);
+}
+
+.CTA:hover {
+  background-color: transparent;
+}
+
+.CTA:hover::before {
+  transform: translateX(0);
+}
+
+.CTA:hover::after {
+  transform: translateX(0);
 }
