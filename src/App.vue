@@ -2,7 +2,7 @@
 import AboutMeComp from './components/aboutMeComp.vue'
 import LandingComp from './components/landingComp.vue'
 import ExperienceComp from './components/experienceComp.vue'
-import Test from './components/test.vue'
+// import Test from './components/test.vue'
 
 // import { RouterLink, RouterView } from 'vue-router'
 // import HelloWorld from './components/HelloWorld.vue'
@@ -11,7 +11,7 @@ import Test from './components/test.vue'
 <template>
   <LandingComp></LandingComp>
   <AboutMeComp></AboutMeComp>
-  <Test></Test>
+  <!-- <Test></Test> -->
   <ExperienceComp></ExperienceComp>
 
   <div class="nav f-28">

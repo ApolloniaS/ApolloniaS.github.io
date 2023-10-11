@@ -1,8 +1,30 @@
 <template>
     <div class="container">
-      <div class="panel blue">Panel Blue</div>
-      <div class="panel red">Panel Red</div>
-      <div class="panel gray">Panel Gray</div>
+      <div class="panel blue">
+      <div class="panel-content">
+        <div class="company-name">COMPANY NAME</div>
+        <div class="role">ROLE</div>
+        <div class="dates">
+          <span class="start-date">Start Date: MM/DD/YYYY</span>
+          <span class="end-date">End Date: MM/DD/YYYY</span>
+        </div>
+        <div class="tasks">Tasks</div>
+      </div>
+    </div>
+    <div class="panel red">
+      <div class="panel-content">
+        <div class="company-name">COMPANY NAME</div>
+        <div class="role">ROLE</div>
+        <div class="tasks">Tasks</div>
+      </div>
+    </div>
+    <div class="panel grey">
+      <div class="panel-content">
+        <div class="company-name">COMPANY NAME</div>
+        <div class="role">ROLE</div>
+        <div class="tasks">Tasks</div>
+      </div>
+    </div>
       <div class="panel blue">Panel More</div>
 
     </div>
@@ -51,14 +73,17 @@
   }
   
   .panel {
-    width: 50vw;
+    width: 30vw;
     height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
     font-weight: bold;
-    flex-shrink: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 2rem;
+    margin: 1rem;
   }
   
   .blue {
