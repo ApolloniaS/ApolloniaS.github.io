@@ -1,0 +1,48 @@
+/// *** FONTS *** ///
+@font-face {
+  font-family: 'FreePixel';
+  src: url('./fonts/FreePixel.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DoublePixel';
+  src: url('./fonts/double_pixel-7.ttf') format('truetype');
+}
+/// ***
+
+/// potentiel plus foncé #1f081c
+/// titre: #4a2b55 color: #8d98b4 
+/// autres: #6a5c77 #aa7da1 
+
+///*** GLOBAL *** /// 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+} 
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+///
+
+.component-container {
+  margin: 0 !important;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #6a5c77;
+}
+
+.enum {
+  font-family: "DoublePixel", sans-serif;
+  font-size: 4rem;
+  padding: 3rem;
+  color: #4a2b55;
+}
