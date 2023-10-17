@@ -1,39 +1,80 @@
-<script setup lang="ts">
-import AboutMeComp from './components/aboutMeComp.vue'
-import LandingComp from './components/landingComp.vue'
-import ExperienceComp from './components/experienceComp.vue'
-// import Test from './components/test.vue'
-
-// import { RouterLink, RouterView } from 'vue-router'
-// import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
   <LandingComp></LandingComp>
   <AboutMeComp></AboutMeComp>
   <!-- <Test></Test> -->
   <ExperienceComp></ExperienceComp>
-
+  <div class="component-container">test</div>
+  
   <div class="nav f-28">
-    <p><a href="#top">00</a></p>
-    <p><a href="#about">01</a></p>
-    <p><a href="#exp">02</a></p>
+    <p>
+      <a class="nav-item" href="#top">
+        00
+      </a>
+    </p>
+    <p>
+      <a class="nav-item" href="#about">
+        01
+      </a>
+    </p>
+    <p>
+      <a class="nav-item" href="#exp">
+        02
+      </a>
+    </p>
   </div>
   <!-- <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
+    
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
-
+      
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
   </header>
-
+  
   <RouterView /> -->
 </template>
+
+<script setup lang="ts">
+import AboutMeComp from './components/aboutMeComp.vue'
+import LandingComp from './components/landingComp.vue'
+import ExperienceComp from './components/experienceComp.vue'
+import Test from './components/test.vue'
+import { onMounted, onBeforeUnmount } from 'vue'
+
+const handleScroll = () => {
+  const navItems = document.querySelectorAll('.nav-item')
+  let activeSectionId: string | null = null
+
+  document.querySelectorAll('.component-container').forEach((section: HTMLElement) => {
+    const rect = section.getBoundingClientRect()
+    if (rect.top <= 0 && rect.bottom >= 0) {
+      activeSectionId = section.id
+    }
+  })
+  navItems.forEach((item: HTMLElement) => item.classList.remove('active'))
+  
+  if (activeSectionId) {
+    console.log(activeSectionId)
+    const correspondingNavItem = document.querySelector(`a.nav-item[href="#${activeSectionId}"]`)
+    console.log(correspondingNavItem)
+    if (correspondingNavItem) {
+      correspondingNavItem.classList.add('active')
+    }
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+</script>
 
 <style scoped>
 .nav {
@@ -44,10 +85,15 @@ import ExperienceComp from './components/experienceComp.vue'
   font-family: "DoublePixel", sans-serif;
   color: #1f081c;
   border-right: 1px solid #1f081c;
-
+  
   > p {
     padding-right: 1rem;
   }
+}
+
+a.active {
+  font-weight: bold;
+  color: red; 
 }
 
 header {
